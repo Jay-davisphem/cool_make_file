@@ -35,3 +35,11 @@ clean:
 
 all:
 	echo $(files)
+
+# Automatic variable and wildcards
+# '$@' affects each of the the item in a target(just like loop)
+# '$?' affects all prerequisite newer than target
+# '$^' affects all prerequites
+print: $(wildcard *.c)
+	echo $@ 
+	ls -la $?
